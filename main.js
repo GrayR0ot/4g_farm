@@ -1,6 +1,6 @@
 import xml2js from 'xml2js';
 import crypto from 'crypto';
-import axios, {get} from 'axios';
+import axios from 'axios';
 import {config} from "./config.js";
 
 async function setupSession(server) {
