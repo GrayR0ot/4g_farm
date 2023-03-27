@@ -90,7 +90,7 @@ async function reboot(server, user, password) {
 }
 
 async function getIpAddress() {
-    const data = await axios.get('https://2ip.ru')
+    const data = await axios.get('https://api.ipify.org?format=json')
         .then((res) => res.data)
         .catch((fail) => {
             console.error(fail)
