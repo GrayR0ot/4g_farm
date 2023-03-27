@@ -96,13 +96,23 @@ async function getIpAddress() {
     console.log(data)
 }
 
+async function sleep(ms) {
+    return await new Promise((resolve) => {
+        setTimeout(() => resolve(), ms);
+    })
+}
+
 async function main() {
     await getIpAddress();
     await reboot(config.ROUTER, config.USER, config.PASSWORD);
+    await sleep(2500)
     await getIpAddress();
     await reboot(config.ROUTER, config.USER, config.PASSWORD);
+    await sleep(2500)
     await getIpAddress();
     await reboot(config.ROUTER, config.USER, config.PASSWORD);
+    await sleep(2500)
+    await getIpAddress();
 }
 
 (async () => {
